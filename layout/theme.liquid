@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website Template</title>
+    {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body>
+    {% include 'header.liquid' %}
+    {{ content_for_layout }}
+    <div class="py-10 bg-[#F2F0F1]"></div>
+	<div class="py-20 bg-white"></div>
+    {% include 'footer.liquid' %}
+  </body>
+</html>

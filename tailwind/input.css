@@ -1,0 +1,60 @@
+/* Import Tailwind Css */
+@import 'tailwindcss';
+/* Import Custom Font */
+@font-face {
+	font-family: 'Satoshi-Variable';
+	src: url('./Satoshi-Variable.woff2') format('woff2'),
+		url('./Satoshi-Variable.woff') format('woff'),
+		url('./Satoshi-Variable.ttf') format('truetype');
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Integral CF';
+	src: url('./FONTSPRINGDEMO-IntegralCFBoldRegular.woff2') format('woff2'),
+		url('./FONTSPRINGDEMO-IntegralCFBoldRegular.woff') format('woff'),
+		url('./FONTSPRINGDEMO-IntegralCFBoldRegular.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+/* Customize Tailwind Css Theme */
+@theme {
+	--font-satoshi: 'Satoshi-Variable';
+	--font-integral: 'Integral CF';
+	--breakpoint-*: initial;
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1240px;
+	--color-black-60: rgba(0, 0, 0, 0.6);
+	--color-black-40: rgba(0, 0, 0, 0.4);
+	--color-black-20: rgba(0, 0, 0, 0.2);
+	--color-black-10: rgba(0, 0, 0, 0.1);
+}
+/* Template Style */
+.container {
+	@apply container mx-auto;
+}
+.logo-style {
+	@apply font-integral text-black text-[32px] font-bold leading-normal inline-block;
+}
+.nav-link-style li a {
+	@apply text-base text-black font-satoshi font-normal leading-normal;
+}
+.header-icon li a {
+	@apply text-black;
+}
+.footer-section-heading {
+	@apply text-black text-base font-medium leading-[18px] tracking-[3px] uppercase font-satoshi mb-[26px];
+}
+.footer-link-style {
+	@apply space-y-[18px];
+}
+.footer-link-style li a {
+	@apply text-black-60 text-base font-normal leading-[19px] font-satoshi hover:text-black transition-all duration-300;
+}
+.footer-social-style li a {
+	@apply w-7 h-7 rounded-full border border-black-20 text-black flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300;
+}

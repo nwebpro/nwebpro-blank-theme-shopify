@@ -60,3 +60,19 @@
 .footer-social-style li a {
 	@apply w-7 h-7 rounded-full border border-black-20 text-black flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300;
 }
+.testimonial-carousel > svg {
+	@apply absolute right-0 -top-10 cursor-pointer;
+}
+.testimonial-carousel > svg:last-child {
+	@apply right-9;
+}
+.testimonial-carousel > .slick-list {
+	@apply -mx-[12px];
+	overflow: inherit;
+}
+.slick-slide {
+	@apply blur-[2px];
+}
+.testimonial-carousel .slick-slide.slick-active {
+	@apply blur-[0px];
+}

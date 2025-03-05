@@ -1,3 +1,4 @@
+
 <div class="bg-[#F2F0F1] pt-[35px]">
   <div class="container flex items-center">
     <div class="w-1/2">
@@ -43,41 +44,8 @@
   <div class="container pb-16 border-b border-black-10">
     <h2 class="text-5xl text-center font-bold text-black leading-normal font-integral mb-[55px]">NEW ARRIVALS</h2>
     <div class="flex flex-wrap gap-5 mb-9">
-      {% for new_arrivals_p in (1..4) %}
-        <div>
-          <div class="bg-[#F0EEED] rounded-[20px] overflow-hidden mb-4">
-            <img
-              class="w-full"
-              src="{{ 'product-' |  append: new_arrivals_p |  append: '.png' |  asset_url }}"
-              draggable="false"
-              alt="New Arrivals Product {{ new_arrivals_p }}">
-          </div>
-          <div class="space-y-2">
-            <h2 class="text-xl leading-normal font-bold text-black font-satoshi">T-shirt with Tape Details</h2>
-            <div class="flex items-center gap-[13px]">
-              <div class="flex items-center gap-x-[5px]">
-                {% for rating_icon in (1..5) %}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none">
-                    <path d="M9.24494 0.255005L11.8641 5.89491L18.0374 6.6431L13.4829 10.8769L14.679 16.9793L9.24494 13.956L3.8109 16.9793L5.00697 10.8769L0.452479 6.6431L6.62573 5.89491L9.24494 0.255005Z" fill="#FFC633" />
-                  </svg>
-                {% endfor %}
-              </div>
-              <div class="text-black font-satoshi text-sm font-normal leading-normal">
-                4.5/<span class="text-black-60">5</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-[10px]">
-              <div class="text-2xl font-satoshi font-bold text-black leading-normal">$120</div>
-              <div class="text-2xl font-satoshi font-bold text-black-40 line-through leading-normal">$260</div>
-              <div class="bg-discount-bg text-discount py-[6px] px-[14px] rounded-[62px] font-satoshi text-xs font-medium leading-normal">-20%</div>
-            </div>
-          </div>
-        </div>
+      {% for top_selling_p in (1..4) %}
+        {% include 'single-product.liquid' %}
       {% endfor %}
     </div>
     <div class="text-center">
@@ -91,40 +59,7 @@
     <h2 class="text-5xl text-center font-bold text-black leading-normal font-integral mb-[55px]">Top Selling</h2>
     <div class="flex flex-wrap gap-5 mb-9">
       {% for top_selling_p in (1..4) %}
-        <div>
-          <div class="bg-[#F0EEED] rounded-[20px] overflow-hidden mb-4">
-            <img
-              class="w-full"
-              src="{{ 'top-selling-' |  append: top_selling_p |  append: '.png' |  asset_url }}"
-              draggable="false"
-              alt="Top Selling Product {{ top_selling_p }}">
-          </div>
-          <div class="space-y-2">
-            <h2 class="text-xl leading-normal font-bold text-black font-satoshi">T-shirt with Tape Details</h2>
-            <div class="flex items-center gap-[13px]">
-              <div class="flex items-center gap-x-[5px]">
-                {% for rating_icon in (1..5) %}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none">
-                    <path d="M9.24494 0.255005L11.8641 5.89491L18.0374 6.6431L13.4829 10.8769L14.679 16.9793L9.24494 13.956L3.8109 16.9793L5.00697 10.8769L0.452479 6.6431L6.62573 5.89491L9.24494 0.255005Z" fill="#FFC633" />
-                  </svg>
-                {% endfor %}
-              </div>
-              <div class="text-black font-satoshi text-sm font-normal leading-normal">
-                4.5/<span class="text-black-60">5</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-[10px]">
-              <div class="text-2xl font-satoshi font-bold text-black leading-normal">$120</div>
-              <div class="text-2xl font-satoshi font-bold text-black-40 line-through leading-normal">$260</div>
-              <div class="bg-discount-bg text-discount py-[6px] px-[14px] rounded-[62px] font-satoshi text-xs font-medium leading-normal">-20%</div>
-            </div>
-          </div>
-        </div>
+        {% include 'single-product.liquid' %}
       {% endfor %}
     </div>
     <div class="text-center">

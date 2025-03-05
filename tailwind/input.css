@@ -76,3 +76,9 @@
 .testimonial-carousel .slick-slide.slick-active {
 	@apply blur-[0px];
 }
+.filter-cat-link {
+	@apply flex justify-between text-base font-normal leading-normal font-satoshi text-black-60;
+}
+.filter-heading {
+	@apply text-xl font-satoshi leading-normal font-bold text-black;
+}

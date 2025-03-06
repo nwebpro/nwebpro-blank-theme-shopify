@@ -1,7 +1,8 @@
 <div class="bg-black py-[9px] text-white text-center font-satoshi text-sm leading-normal relative">
   <div class="container">
-    Sign up and get 20% off to your first order.
-    <a href="#" class="font-medium underline">Sign Up Now</a>
+    {% comment %} Sign up and get 20% off to your first order.
+            <a href="#" class="font-medium underline">Sign Up Now</a> {% endcomment %}
+    {{ section.settings.announcement_bar_content }}
   </div>
   <div class="absolute right-[100px] top-1/2 -translate-y-1/2">
     <svg
@@ -20,9 +21,10 @@
     "name": "Announcement Bar",
     "settings": [
       {
-        "type": "text",
+        "type": "textarea",
         "id": "announcement_bar_content",
-        "label": "Announcement Bar Content"
+        "label": "Announcement Bar",
+        "default": "Sign up and get 20% off to your first order."
       }
     ]
   }

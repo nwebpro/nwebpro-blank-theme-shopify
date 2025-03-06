@@ -2,12 +2,12 @@
   <div class="bg-[#F0EEED] rounded-[20px] overflow-hidden mb-4">
     <img
       class="w-full"
-      src="{{ 'top-selling-' |  append: top_selling_p |  append: '.png' |  asset_url }}"
+      src="{{ product.featured_image |  img_url: 'large' }}"
       draggable="false"
       alt="Top Selling Product {{ top_selling_p }}">
   </div>
   <div class="space-y-2">
-    <h2 class="text-xl leading-normal font-bold text-black font-satoshi">T-shirt with Tape Details</h2>
+    <h2 class="text-xl leading-normal font-bold text-black font-satoshi">{{ product.title }}</h2>
     <div class="flex items-center gap-[13px]">
       <div class="flex items-center gap-x-[5px]">
         {% for rating_icon in (1..5) %}
@@ -26,9 +26,16 @@
       </div>
     </div>
     <div class="flex items-center gap-[10px]">
-      <div class="text-2xl font-satoshi font-bold text-black leading-normal">$120</div>
-      <div class="text-2xl font-satoshi font-bold text-black-40 line-through leading-normal">$260</div>
-      <div class="bg-discount-bg text-discount py-[6px] px-[14px] rounded-[62px] font-satoshi text-xs font-medium leading-normal">-20%</div>
+      <div class="text-2xl font-satoshi font-bold text-black leading-normal">{{ product.price | money }}</div>
+      {% if product.compare_at_price > product.price %}
+        <div class="text-2xl font-satoshi font-bold text-black-40 line-through leading-normal">
+          {{ product.compare_at_price | money }}
+        </div>
+        {% assign discount = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price %}
+        <div class="bg-discount-bg text-discount py-[6px] px-[14px] rounded-[62px] font-satoshi text-xs font-medium leading-normal">
+          -{{ discount | round }}%
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>

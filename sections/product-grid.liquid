@@ -1,0 +1,90 @@
+<div class="pt-[72px] pb-[64px]">
+  <div class="container pb-16 border-b border-black-10">
+    <h2 class="text-5xl text-center font-bold text-black leading-normal font-integral mb-[55px] uppercase">
+      {{ section.settings.title }}
+    </h2>
+
+    {%- assign grid_class = section.settings.product_grid -%}
+    {%- assign total_products = section.settings.collection.products | size -%}
+    {%- assign product_limit = section.settings.product_limit | default: 4 -%}
+
+    <div class="grid gap-5 mb-9
+      {% if grid_class == 'grid-1' %} grid-cols-1
+      {% elsif grid_class == 'grid-2' %} grid-cols-2
+      {% elsif grid_class == 'grid-3' %} grid-cols-3
+      {% else %} grid-cols-4
+      {% endif %}
+    ">
+      {% for product in section.settings.collection.products limit: product_limit %}
+        {% include 'single-product.liquid'
+          , product: product %}
+      {% endfor %}
+    </div>
+
+    {% if total_products > product_limit %}
+      <div class="text-center">
+        <a href="{{ section.settings.url }}" class="py-4 px-[54px] rounded-[62px] border border-black-10 text-base leading-normal font-medium font-satoshi text-black inline-block">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Product Grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "New Arrivals"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button"
+      }, {
+        "type": "select",
+        "id": "product_grid",
+        "label": "Select Product Grid",
+        "options": [
+          {
+            "value": "grid-1",
+            "label": "1"
+          }, {
+            "value": "grid-2",
+            "label": "2"
+          }, {
+            "value": "grid-3",
+            "label": "3"
+          }, {
+            "value": "grid-4",
+            "label": "4"
+          }
+        ],
+        "default": "grid-4"
+      }, {
+        "type": "range",
+        "id": "product_limit",
+        "label": "Show Number of Products",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "default": 4
+      }
+    ]
+  }
+{% endschema %}

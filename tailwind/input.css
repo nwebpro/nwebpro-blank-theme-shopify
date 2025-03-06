@@ -82,3 +82,6 @@
 .filter-heading {
 	@apply text-xl font-satoshi leading-normal font-bold text-black;
 }
+.announcement-bar a {
+	@apply font-medium underline;
+}

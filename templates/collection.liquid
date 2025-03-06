@@ -17,10 +17,8 @@
       </div>
       <div class="text-black text-base font-normal leading-normal">{{ collection.title }}</div>
     </div>
-
     <div class="flex gap-5">
       <div class="w-[295px] border border-black-10 rounded-[20px] py-5 px-6">
-        {% comment %} Filters {% endcomment %}
         <div>
           <div class="flex items-center justify-between pb-6 mb-6 border-b border-black-10">
             <h3 class="filter-heading">Filters</h3>
@@ -48,7 +46,6 @@
             {% endfor %}
           </ul>
         </div>
-        {% comment %} Colors {% endcomment %}
         <div class="space-y-5">
           <button data-id="filter-colors" class="filter-heading cursor-pointer flex items-center justify-between w-full">
             Colors
@@ -74,6 +71,12 @@
           <div class="">
             <p class="text-black-60 font-normal font-satoshi text-base leading-normal">Showing 1-10 of 100 Products</p>
           </div>
+        </div>
+        <div class="grid grid-cols-3 gap-5 mb-9">
+          {% for product in collection.products %}
+            {% include 'single-product.liquid'
+              , product: product %}
+          {% endfor %}
         </div>
       </div>
     </div>

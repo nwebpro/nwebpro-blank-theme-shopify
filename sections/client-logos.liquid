@@ -1,0 +1,53 @@
+<div class="bg-black py-10">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      {% for client in section.blocks %}
+        {%- case client.type -%}
+          {%- when "client_logos" -%}
+            {{ client.settings.client_logo | image_url: width: client.settings.width | image_tag: width: client.settings.width, height: client.settings.height, draggable: false, alt: client.settings.client_logo.alt }}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Client Logos",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "blocks": [
+      {
+        "type": "client_logos",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "client_logo",
+            "label": "Upload Image"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }, {
+            "type": "number",
+            "id": "width",
+            "label": "Width (px)",
+            "default": 100
+          }, {
+            "type": "number",
+            "id": "height",
+            "label": "Height (px)",
+            "default": 100
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Client Logos"
+      }
+    ]
+  }
+{% endschema %}

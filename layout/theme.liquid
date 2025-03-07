@@ -13,8 +13,8 @@
     {{ content_for_header }}
   </head>
   <body>
-    {% include 'header.liquid' %}
+    {% sections 'header-group' %}
     {{ content_for_layout }}
-    {% include 'footer.liquid' %}
+    {% sections 'footer-group' %}
   </body>
 </html>

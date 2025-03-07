@@ -1,0 +1,27 @@
+{
+	"sections": {
+		"hero": {
+			"type": "hero"
+		},
+		"client_logos": {
+			"type": "client-logos"
+		},
+		"product_grid": {
+			"type": "product-grid"
+		},
+		"category_box": {
+			"type": "category-box"
+		},
+		"testimonials": {
+			"type": "testimonials"
+		}
+	},
+	"order": [
+		"hero",
+		"client_logos",
+		"product_grid",
+		"category_box",
+		"testimonials"
+	]
+	
+}

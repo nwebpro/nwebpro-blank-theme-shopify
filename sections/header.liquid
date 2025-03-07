@@ -1,5 +1,4 @@
 <header>
-  {% section 'announcement-bar' %}
   <div class="bg-white py-6">
     <div class="container flex items-center gap-x-[40px]">
       <div class="">
@@ -93,3 +92,17 @@
     </div>
   </div>
 </header>
+
+{% schema %}
+  {
+    "name": "Header",
+    "disabled_on": {
+      "groups": ["footer"]
+    },
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+  }
+{% endschema %}

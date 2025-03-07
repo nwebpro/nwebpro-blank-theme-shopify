@@ -1,0 +1,49 @@
+<div>
+  <div class="container bg-[#F0F0F0] rounded-[40px] pt-[70px] px-16 pb-[76px]">
+    <h2 class="text-5xl text-center font-bold text-black leading-normal font-integral mb-16">BROWSE BY dress STYLE</h2>
+    <div class="space-y-5">
+      <div class="flex gap-5">
+        <div class="w-[407px]">
+          <a
+            href="#"
+            style="background-image: url('{{ 'promo-1.png' | asset_url }}');"
+            class="block bg-cover h-[289px] py-[25px] px-9 text-4xl font-bold text-black leading-normal font-satoshi">Casual</a>
+        </div>
+        <div class="flex-1">
+          <a
+            href="#"
+            style="background-image: url('{{ 'promo-2.png' | asset_url }}');"
+            class="block bg-cover h-[289px] py-[25px] px-9 text-4xl font-bold text-black leading-normal font-satoshi">Formal</a>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="flex-1">
+          <a
+            href="#"
+            style="background-image: url('{{ 'promo-3.png' | asset_url }}');"
+            class="block bg-cover h-[289px] py-[25px] px-9 text-4xl font-bold text-black leading-normal font-satoshi">Party</a>
+        </div>
+        <div class="w-[407px]">
+          <a
+            href="#"
+            style="background-image: url('{{ 'promo-4.png' | asset_url }}');"
+            class="block bg-cover h-[289px] py-[25px] px-9 text-4xl font-bold text-black leading-normal font-satoshi">Gym</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Category Boxes",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "presets": [
+      {
+        "name": "Category Boxes"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,13 +1,15 @@
 <div>
-  <div class="bg-[#F0EEED] rounded-[20px] overflow-hidden mb-4">
+  <a href="{{ product.url }}" class="bg-[#F0EEED] block rounded-[20px] overflow-hidden mb-4">
     <img
       class="w-full"
       src="{{ product.featured_image |  img_url: 'large' }}"
       draggable="false"
       alt="Top Selling Product {{ top_selling_p }}">
-  </div>
+  </a>
   <div class="space-y-2">
-    <h2 class="text-xl leading-normal font-bold text-black font-satoshi">{{ product.title }}</h2>
+    <a href="{{ product.url }}" class="block">
+      <h2 class="text-xl leading-normal font-bold text-black font-satoshi">{{ product.title }}</h2>
+    </a>
     <div class="flex items-center gap-[13px]">
       <div class="flex items-center gap-x-[5px]">
         {% for rating_icon in (1..5) %}

@@ -20,6 +20,31 @@
     <h1 class="text-[40px] font-bold font-integral leading-normal text-black mb-6">{{ product.title }}</h1>
     <div class="text-lg py-20">
       {{ product.content }}
+      {% form 'product'
+        , product %}
+        <div class="flex">
+          {% if product.variants.size > 1 %}
+            <select name="id">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+          {% else %}
+            <input
+              type="hidden"
+              name="id"
+              value="{{ product.variants.first.id }}">
+          {% endif %}
+          <input
+            name="quantity"
+            type="number"
+            min="1"
+            value="1"
+            class="w-24 bg-gray-100 text-center rounded-full mr-2 focus:outline-none">
+          <button class="bg-black rounded-full px-8 py-2 text-white cursor-pointer">Add to cart</button>
+        </div>
+      {% endform %}
+
     </div>
   </div>
 </div>

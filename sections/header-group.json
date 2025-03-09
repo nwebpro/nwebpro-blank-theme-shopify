@@ -9,5 +9,5 @@
 			"type": "header"
 		}
 	},
-	"order": ["header", "announcement_bar"]
+	"order": ["announcement_bar", "header"]
 }
